@@ -1,15 +1,15 @@
 <?php
+/*Criando conexão com o banco de dados */
 
-/* Criando conexão com o banco de dados */
-$servidor = "localhost";
-$user = "root";
-$password = "root";
-$banco = "bd_dados";
+$servidor = 'localhost';
+$user = 'root';
+$password = 'root';
+$banco = 'tb_dados';
 
 $conexao = mysqli_connect($servidor,$user,$password,$banco);
 
+/*Recebendo dados do form */
 
-/* Recebendo dados do form */
 $nome = $_POST ['nome'];
 $endereco = $_POST ['endereco'];
 $numero = $_POST ['numero'];
@@ -17,27 +17,18 @@ $bairro = $_POST ['bairro'];
 $cidade = $_POST ['cidade'];
 $estado = $_POST ['estado'];
 $cep = $_POST ['cep'];
-$numerotel = $_POST ['numerotel'];
+$telefone = $_POST ['telefone'];
 $cpf = $_POST ['cpf'];
 $rg = $_POST ['rg'];
-$gmail = $_POST ['gmail'];
+$email = $_POST ['email'];
 
 
-echo "$nome </br>";
-echo "$endereco </br>";
-echo "$numero </br>";
-echo "$bairro </br>";
-echo "$cidade </br>";
-echo "$estado </br>";
-echo "$cep </br>";
-echo "$numerotel </br>";
-echo "$cpf </br>";
-echo "$rg </br>";
-echo "$gmail </br>";
 
+/*Comando para insert into*/
+$sql = "INSERT INTO tb_cliente (nm_cliente, nm_endereço, nr_endereço, nm_bairro, nm_cidade, sg_estado, cd_cep, telefone, cpf, rg, email) values ('$nome','$endereco','$numero','$bairro','$cidade','$estado','$cep','$telefone','$cpf','$rg','$email')";
 
-$sql = "INSERT INTO bd_dados (cd_cliente, nm_cliente, nm_endereco, nr_endereco, nm_bairro, nm_cidade, nm_estado, nr_CEP, nr_telefone, nr_CPF, nr_RG, nm_email) values (default,'$nome','$endereco','$numero','$bairro','$cidade','$estado','$cep','$numerotel','$cpf','$rg','$gmail')";
+/*Comando para enviar os dados o banco*/
+$insert = mysqli_query($conexao, $sql);
 
-$insert = mysqli_query1($conexao,$sql);
 
 ?>
