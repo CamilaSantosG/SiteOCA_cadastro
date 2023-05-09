@@ -17,10 +17,10 @@ $bairro = $_POST ['bairro'];
 $cidade = $_POST ['cidade'];
 $estado = $_POST ['estado'];
 $cep = $_POST ['cep'];
-$telefone = $_POST ['telefone'];
+$telefone = $_POST ['numerotel'];
 $cpf = $_POST ['cpf'];
 $rg = $_POST ['rg'];
-$email = $_POST ['email'];
+$email = $_POST ['gmail'];
 
 
 
